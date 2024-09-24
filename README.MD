@@ -1,6 +1,6 @@
 # Module 3 Assignment (Milestone 1): Policy Management System for an Insurance Company 
 
-This is a program is mangement application for Insurrance company where the program will manage the operations of the company. It will be able to register new policy-holders and manage their accounts and it will be able to register new products and manage it. Lastly the policy-holders will be able to purchase any products of their choice which will be mapped in the temp database.
+This program is a mangement application for Insurrance company where the program will manage the operations of the company. It will be able to register new policy-holders and manage their accounts and it will be able to register new products and manage it. Lastly the policy-holders will be able to purchase any products of their choice which will be mapped in the temp database.
 
 
 ## Key Features
@@ -14,7 +14,7 @@ This is a program is mangement application for Insurrance company where the prog
 
 - **Class Creation on seperate files**: Three classes were created to serve as the blue print to their objects.
 
-    - **PolicyHolder Class**: This is a special class to model the architecture design of the Policy Holders which are - (Account name, Policy number, Account balance, Account status). It also have define methods for certain actions.
+    - **PolicyHolder Class**: This is a special class to model the architecture design of the Policy Holders which are - (Account name, Policy number, Account balance, Account status). It also have defined methods for certain actions.
 
     - **Product Class**: This is a special class to model the desiggn of the product objects. They include (Product name and Product Code). It also has defined methods for certian actions.
 
