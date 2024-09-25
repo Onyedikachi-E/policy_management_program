@@ -38,7 +38,7 @@ class Payments:
              print(f"Dear {self.policy_holder.fname} {self.policy_holder.lname}, your {self.product.product_name} will expire in 7 days on {datetime.strftime(self.due_date), '%d-%m-%Y'}. Kindly renew payment!!")
 
 
-    def payment_penalties(self, payments_database:dict, policy_holders_database:dict):
+    def payment_penalties(self, policy_holders_database:dict):
         "*To give penalties to defaulters*"
         
         try:
@@ -61,7 +61,7 @@ def check_defaulters(payments_database:dict, policy_holders_database:dict):
     try:
         for product_code, payment_record in payments_database.items():
             for policy_holder_number, payment_data in payment_record.items():
-                payment_data.payment_penalties(payments_database, policy_holders_database)
+                payment_data.payment_penalties(policy_holders_database)
             
     # Error Handling for Exception
     except Exception as e:
