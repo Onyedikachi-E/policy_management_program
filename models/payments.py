@@ -34,8 +34,8 @@ class Payments:
     def payment_reminders(self):
         "*To remind policy holders of product payment 7 days before due date*"
 
-        days_remianing = datetime.now().date() - self.due_date
-        if days_remianing.days <= 7:
+        days_remianing = self.due_date - datetime.now().date()
+        if days_remianing.days in range(1, 7):
              print(f"Dear {self.policy_holder.fname} {self.policy_holder.lname}, your {self.product.product_name} will expire in {days_remianing.days} days on {datetime.strftime(self.due_date, '%d-%m-%Y')}. Kindly renew payment!!")
 
 

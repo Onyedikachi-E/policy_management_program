@@ -45,7 +45,7 @@ def main():
 
 
         # Create payments for the products and store the product code as 'key' and list of the policy_holder's policy_number as the 'values'
-        payment_one = payments.Payments(product=produt_one, policy_holder=policyholder_one, due_date=datetime.strptime("30/08/2024", "%d/%m/%Y").date())
+        payment_one = payments.Payments(product=produt_one, policy_holder=policyholder_one, due_date=datetime.strptime("23/09/2024", "%d/%m/%Y").date())
         payment_one.processing_payment(payments_database=payments_database)
 
         payment_two = payments.Payments(product=produt_one, policy_holder=policyholder_two, due_date=datetime.strptime("30/09/2024", "%d/%m/%Y").date())
@@ -61,7 +61,6 @@ def main():
         # Task 4 : Policyholder Demonstration: - Create at least two policyholders who have paid for one of the products and display their account details.
         policyholder_one.display_acct_details(payments_database=payments_database, products_database=products_database)
         policyholder_two.display_acct_details(payments_database=payments_database, products_database=products_database)
-        payments.payment_reminders(payments_database)
     
 
     # Error Handling for Exception
