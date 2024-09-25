@@ -34,8 +34,9 @@ class Payments:
     def payment_reminders(self):
         "*To remind policy holders of product payment 7 days before due date*"
 
-        if datetime.now().date() - self.due_date == 7:
-             print(f"Dear {self.policy_holder.fname} {self.policy_holder.lname}, your {self.product.product_name} will expire in 7 days on {datetime.strftime(self.due_date), '%d-%m-%Y'}. Kindly renew payment!!")
+        days_remianing = datetime.now().date() - self.due_date
+        if days_remianing.days <= 7:
+             print(f"Dear {self.policy_holder.fname} {self.policy_holder.lname}, your {self.product.product_name} will expire in {days_remianing.days} days on {datetime.strftime(self.due_date, '%d-%m-%Y')}. Kindly renew payment!!")
 
 
     def payment_penalties(self, policy_holders_database:dict):
@@ -52,6 +53,22 @@ class Payments:
             # Error Message
             error_message = {"message":str(e)}
             print(error_message)
+
+
+# This functions checks the payments_database and calls the payment_reminders() method for each payment object
+def payment_reminders(payments_database:dict):
+    "*To check and do reminders to policy-holders*"
+
+    try:
+        for product_code, payment_record in payments_database.items():
+            for policy_holder_number, payment_data in payment_record.items():
+                payment_data.payment_reminders()
+            
+    # Error Handling for Exception
+    except Exception as e:
+        # Error Message
+        error_message = {"message":str(e)}
+        print(error_message)
 
 
 # This functions checks the payments_database and calls the payment_penalties() method for each payment object

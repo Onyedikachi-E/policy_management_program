@@ -61,6 +61,7 @@ def main():
         # Task 4 : Policyholder Demonstration: - Create at least two policyholders who have paid for one of the products and display their account details.
         policyholder_one.display_acct_details(payments_database=payments_database, products_database=products_database)
         policyholder_two.display_acct_details(payments_database=payments_database, products_database=products_database)
+        payments.payment_reminders(payments_database)
     
 
     # Error Handling for Exception
