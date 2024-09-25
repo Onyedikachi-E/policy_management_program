@@ -48,14 +48,14 @@ def main():
         payment_one = payments.Payments(product=produt_one, policy_holder=policyholder_one, due_date=datetime.strptime("30/09/2024", "%d/%m/%Y").date())
         payment_one.processing_payment(payments_database=payments_database)
 
-        payment_one = payments.Payments(product=produt_one, policy_holder=policyholder_two, due_date=datetime.strptime("30/09/2024", "%d/%m/%Y").date())
-        payment_one.processing_payment(payments_database=payments_database)
-
-        payment_two = payments.Payments(product=product_two, policy_holder=policyholder_one, due_date=datetime.strptime("30/09/2024", "%d/%m/%Y").date())
+        payment_two = payments.Payments(product=produt_one, policy_holder=policyholder_two, due_date=datetime.strptime("30/09/2024", "%d/%m/%Y").date())
         payment_two.processing_payment(payments_database=payments_database)
 
-        payment_three = payments.Payments(product=product_two, policy_holder=policyholder_two, due_date=datetime.strptime("30/09/2024", "%d/%m/%Y").date())
+        payment_three = payments.Payments(product=product_two, policy_holder=policyholder_one, due_date=datetime.strptime("30/09/2024", "%d/%m/%Y").date())
         payment_three.processing_payment(payments_database=payments_database)
+
+        payment_four = payments.Payments(product=product_two, policy_holder=policyholder_two, due_date=datetime.strptime("30/09/2024", "%d/%m/%Y").date())
+        payment_four.processing_payment(payments_database=payments_database)
 
 
         # Task 4 : Policyholder Demonstration: - Create at least two policyholders who have paid for one of the products and display their account details.
